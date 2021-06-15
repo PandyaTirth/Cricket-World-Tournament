@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&family=Mate+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,700&display=swap');
+
+/*General*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: mate SC;
+}
+
+h1{
+  text-align: center;
+  margin: 0;
+  font-size: 60px;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 20px;
+  background-color: rgb(148, 149, 214);
+}
+
+.countries, .countries h1, .team-profile, .team-profile h1, .players, .players h1, .matches, .matches h1{
+  margin-bottom: 50px;
+}
+
+/* Navbar*/
+
+.navbar{
+  position: fixed;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    z-index: 1;
+    padding: 25px;
+    background-color: rgb(6, 28, 53);
+}
+
+.navbar a{
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    background-color: rgb(35, 60, 128);
+    transition: ease 0.5s;
+    border-radius: 10%;
+}
+
+/* Homepage */
+
+.home-page {
+    background-image: url(/Images/stadium.jpg);
+    background-size: cover;
+}
+
+#title{
+  font-family: Marcellus SC;
+  font-size: 50px;
+  background-color: transparent;
+}
+
+.homepage-container{
+    padding: 355px;
+}
+
+.inner-box{
+    padding: 25px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 20%;
+}
+
+/* Countries */
+
+.flags-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.flag-img{
+  padding: 0;
+}
+
+.flag-name{
+    font-size: 30px;
+    text-align: center;
+    display: none;
+    margin: 0;
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.534);
+    position: relative;
+    bottom: 67%;
+}
+
+.flag-img:hover + .flag-name{
+    display: block;
+    cursor: pointer;    
+}
+
+.flag-component{
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  height: 200px;
+}
+
+/* Team Profile */
+
+.team-profile-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.country-name{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 15px 100px;
+    text-align: center;
+    background-color: #383a97;
+    color: white;
+}
+
+.country-profile{
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(226, 187, 187);
+}
+
+/* Players */
+
+.players-container {
+    width: 40em;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+  
+  /*--- Country name */
+  
+.ac-label {
+    width: 250px;
+    font-weight: 700;
+    position: relative;
+    padding: .5em 1em;
+    margin-bottom: .5em;
+    display: block;
+    cursor: pointer;
+    background-color: #383a97;
+    transition: background-color .15s ease-in-out;
+    box-shadow: 3px 3px 4px #888888;
+    color: whitesmoke;
+}
+
+.ac-input:checked + .ac-label{
+    color: black;
+} 
+  
+.ac-input:checked + label, .ac-label:hover {
+    background-color: rgb(148, 149, 214);
+    color: black;
+}
+  
+.ac-label:after, .ac-input:checked + .ac-label:after {
+    content: "+";
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    width: 2em;
+    height: 100%;
+    line-height: 2.25em;
+    text-align: center;
+    background-color: rgb(148, 149, 214);
+    transition: background-color .15s ease-in-out;
+    color: black;
+}
+  
+.ac-label:hover:after, .ac-input:checked + .ac-label:after {
+    background-color: #383a97;
+}
+  
+.ac-input:checked + .ac-label:after {
+    content: "-";
+}
+  
+.ac-input {
+    display: none;
+}
+.ac-label-text{
+    color: black;
+}
+  
+.ac-text, .ac-sub-text {
+    opacity: 0;
+    height: 0;
+    margin-bottom: .5em;
+    transition: opacity .5s ease-in-out;
+    overflow: hidden;
+}
+  
+.ac-input:checked ~ .ac-text, .ac-sub .ac-input:checked ~ .ac-sub-text { 
+    opacity: 1;
+    height: auto;
+}
+  
+  /* -----Player info */
+  
+.ac-sub .ac-label {
+    background: none;
+    font-weight: 600;
+    padding: .5em 2em;
+    margin-bottom: 0;
+}
+  
+.ac-sub .ac-label:checked {
+    background: none;
+    border-bottom: 1px solid whitesmoke;
+}
+  
+.ac-sub .ac-label:after, .ac-sub .ac-input:checked + .ac-label:after {
+    left: 0;
+    background: none;
+}
+  
+.ac-sub .ac-input:checked + label, .ac-sub .ac-label:hover {
+    background: none;
+}
+  
+.ac-sub-text {
+    padding: 0 1em 0 2em;
+}
+  
+/*Venues*/ 
+
+.venues p{
+    font-size: 30px;
+    text-align: center;
+}
+
+.venues-main{
+    background-image: url(/Images/india-map.jpg);
+    background-repeat: no-repeat;
+    background-size: 2000px;
+    background-position: left;
+    padding-bottom: 40px;
+}  
+
+.venues-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.venues-container div h2{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    background-color: #383a97;
+    margin-bottom: 0;
+    padding: 20px 30px;
+    border-radius: 10px 10px 0 0;
+    color: whitesmoke;
+}
+
+.stadium-container{
+  border-radius: 0 0 10px 10px;
+  box-shadow: 7px 10px 10px #888888;
+  transition: ease 0.5s;
+  margin: 0;
+}
+
+.stadium-container:hover{
+    cursor: pointer;
+    transform: scale(1.1); 
+}
+
+/* Matches */
+
+.matches-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#matches-label{
+  width: 400px;
+}
+
+/* ----Styling of "Matches" section is reused by the above "Players" section---- */
+
+/* Points Table */
+
+.points-table{
+  padding-bottom: 40px;
+  background-image: url(/Images/stadium-lights.jpg);
+  background-size: cover;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #266296;
+}
+
+table {
+  margin: 10px auto;
+}
+
+caption {
+  color: white;
+  font-size: 60px;
+  font-weight: 600;
+  padding: 30px 0;
+}
+
+thead th {
+  font-size: 20px;
+  font-weight: 400;
+  background: #3d79b1;
+  color: #FFF;
+}
+
+tr {
+  background: #f4f7f8;
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 5px;
+}
+
+tr:nth-child(even) {
+  background: #aaced4;
+}
+
+th, td {
+  font-family: mate SC;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* Results */
+
+.results{
+  background-color: #ccc;
+  padding-bottom: 40px;
+}
+
+.results h3{
+  text-align: center;
+  font-size: 45px;
+  font-family: Cabin;
+}
+
+.india-flag {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.stripe {
+    width: 225px;
+    height: 50px;
+}
+
+#saffron {
+    background: #FF9933;
+}
+
+#white {
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#green {
+    background: #138808;
+}
+
+.ashok_chakra {
+    height: 40px;
+    width: 40px;
+}
+
+.results p{
+  font-size: 30px;
+  text-align: center;
+  font-family: mate SC;
+  font-style: italic;
+  background-color: whitesmoke;
+}
+
+#heading{
+  display:block;
+  text-align:center;
+  font-size: 50px;
+  margin:10px 0px;
+  font-family: Staatliches;
+}
+
+@keyframes fade{
+  from{
+    opacity:0.1;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+#slider{
+  margin:0 auto;
+  width:60%;
+  overflow:hidden;
+  box-shadow: 5px 4px 8px #888888 ;
+}
+
+.slides{
+  overflow:hidden;
+  animation-name:fade;
+  animation-duration:1s;
+  display:none;
+}
+
+.slides img{
+  width:100%;
+}
+
+#dot{
+  margin:0 auto;
+  text-align:center;
+}
+.dot{
+  display:inline-block;
+  border-radius:50%;
+  background:#fdf9f9;
+  padding:8px;
+  margin:10px 5px;
+}
+
+.active{
+  background:black;
+}
+
